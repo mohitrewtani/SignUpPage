@@ -1,11 +1,26 @@
 package com.mohit.springboot.web.dto;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
 public class UserRegistrationDto {
 
+	@NotEmpty
 	private String firstName;
+	
+	@NotEmpty
 	private String lastName;
+	
+	@NotEmpty
+	@Email
 	private String email;
+	
+	@Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})",
+			    message = "Enter valid password")
+	@NotEmpty
 	private String password;
+
 	public UserRegistrationDto(String firstname, String lastname, String email, String password) {
 		super();
 		this.firstName = firstname;
@@ -37,8 +52,10 @@ public class UserRegistrationDto {
 	public String getPassword() {
 		return password;
 	}
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
+	
 }

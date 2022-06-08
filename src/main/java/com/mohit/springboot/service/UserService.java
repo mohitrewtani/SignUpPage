@@ -10,4 +10,6 @@ import com.mohit.springboot.web.dto.UserRegistrationDto;
 public interface UserService extends UserDetailsService{
 
 	User save(UserRegistrationDto registrationDto);
+
+	User findByEmail(String email);
 }

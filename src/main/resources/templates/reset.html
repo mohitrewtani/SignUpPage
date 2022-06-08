@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<htmlxmlns:th="http://www.thymeleaf.org"
- xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Login Successful</title>
+<title>Reset Password</title>
 <link rel="stylesheet" 
     href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
@@ -22,23 +21,10 @@
           class="icon-bar"></span> <span class="icon-bar"></span> <span
           class="icon-bar"></span>
          </button>
-        <a class="navbar-brand" href="#" th:href="@{/}">My Application</a>
-       </div>
-       <div id="navbar" class="collapse navbar-collapse">
-           <ul class="nav navbar-nav">
-               <li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
-           </ul>
+        <a class="navbar-brand" href="#" th:href="@{/}">Reset Password Module</a>
        </div>
       </div>
     </nav>
     
-    <br>
-    <br>
-    
-    <div class="container">
-        <h1>You are Successfully Signed-In</h1>
-        
-        Welcome <span sec:authentication="principal.username"> User</span>
-    </div>
 </body>
 </html>

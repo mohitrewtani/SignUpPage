@@ -2,10 +2,8 @@ package com.mohit.springboot.service;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
-import org.aspectj.weaver.NewConstructorTypeMunger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -57,5 +55,11 @@ public class UserServiceImpl implements UserService {
 		
 		return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 		
+	}
+
+
+	@Override
+	public User findByEmail(String email) {
+		return userRepository.findByEmail(email);
 	}
 }
