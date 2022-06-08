@@ -16,6 +16,7 @@ public class SecurityConfiguration   {
 
 	@Autowired
 	private UserService userService;
+
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

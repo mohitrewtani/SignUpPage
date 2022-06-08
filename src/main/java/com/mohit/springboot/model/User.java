@@ -43,6 +43,9 @@ public class User {
 			
 	private Collection<Role> roles;
 	
+	public User() {
+		
+	}
 	public User(String firstname, String lastname, String email, String password, Collection<Role> roles) {
 		super();
 		this.firstname = firstname;
