@@ -2,31 +2,31 @@ package com.mohit.springboot.web.dto;
 
 public class UserRegistrationDto {
 
-	private String firstname;
-	private String lastname;
+	private String firstName;
+	private String lastName;
 	private String email;
 	private String password;
 	public UserRegistrationDto(String firstname, String lastname, String email, String password) {
 		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
+		this.firstName = firstname;
+		this.lastName = lastname;
 		this.email = email;
 		this.password = password;
 	}
 	public UserRegistrationDto() {
 
 	}
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstname) {
+		this.firstName = firstname;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastname) {
+		this.lastName = lastname;
 	}
 	public String getEmail() {
 		return email;
