@@ -41,12 +41,13 @@ public class UserRegistrationController {
                                       BindingResult result){
 
         User existing = userService.findByEmail(userDto.getEmail());
-        if (existing != null){
-        	
+        if (existing != null){  	
             result.rejectValue("email", null, "There is already an account registered with that email");
         }
-
-        if (result.hasErrors()){
+        if(userDto.getPassword().equals(userDto.getEmail())) {
+            result.rejectValue("password", null, "Invalid Password Same As Username");
+        }
+        if (result.hasErrors() && !result.hasFieldErrors("newPassword")){
             return "registration";
         }
 

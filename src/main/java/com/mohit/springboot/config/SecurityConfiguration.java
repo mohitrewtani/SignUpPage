@@ -33,6 +33,7 @@ public class SecurityConfiguration   {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests().antMatchers(
 				"/registration**",
+				"/resetpassword**",
 				"/js/**",
 				"/css/**",
 				"/img/**").permitAll()

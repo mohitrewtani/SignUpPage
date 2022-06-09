@@ -6,10 +6,8 @@ import javax.validation.constraints.Pattern;
 
 public class UserRegistrationDto {
 
-	@NotEmpty
 	private String firstName;
 	
-	@NotEmpty
 	private String lastName;
 	
 	@NotEmpty
@@ -21,6 +19,11 @@ public class UserRegistrationDto {
 	@NotEmpty
 	private String password;
 
+	@Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})",
+		    message = "Enter valid new password")
+    @NotEmpty
+    private String newPassword;
+	
 	public UserRegistrationDto(String firstname, String lastname, String email, String password) {
 		super();
 		this.firstName = firstname;
@@ -28,6 +31,15 @@ public class UserRegistrationDto {
 		this.email = email;
 		this.password = password;
 	}
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
 	public UserRegistrationDto() {
 
 	}
@@ -57,5 +69,4 @@ public class UserRegistrationDto {
 		this.password = password;
 	}
 
-	
 }
