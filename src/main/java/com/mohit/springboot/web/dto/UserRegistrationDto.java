@@ -15,12 +15,12 @@ public class UserRegistrationDto {
 	private String email;
 	
 	@Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})",
-			    message = "Enter valid password")
+			    message = "Enter valid password Password Min: 1 lowercase and 1 uppercase alphabet • Min: 1 number • Min: 1 special character(@#$%)• 8-16 character length")
 	@NotEmpty
 	private String password;
 
 	@Pattern(regexp = "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})",
-		    message = "Enter valid new password")
+			message = "Enter valid password Password Min: 1 lowercase and 1 uppercase alphabet • Min: 1 number • Min: 1 special character(@#$%)• 8-16 character length")
     @NotEmpty
     private String newPassword;
 	

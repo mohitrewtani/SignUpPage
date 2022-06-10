@@ -47,7 +47,7 @@ public class UserRegistrationController {
         if(userDto.getPassword().equals(userDto.getEmail())) {
             result.rejectValue("password", null, "Invalid Password Same As Username");
         }
-        if (result.hasErrors() && !result.hasFieldErrors("newPassword")){
+        if (result.hasFieldErrors("password") || result.hasFieldErrors("email")){
             return "registration";
         }
 
